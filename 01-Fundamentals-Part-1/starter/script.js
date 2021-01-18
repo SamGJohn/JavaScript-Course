@@ -1,4 +1,7 @@
 // https://stackoverflow.com/questions/5181845/git-push-existing-repo-to-a-new-and-different-remote-repo-server
+//$ git commit -a -m "wtf"
+//$ git push
+
 //////////////////////////////////////////////////
 // Coding Challenge #3
 
@@ -129,4 +132,8 @@
 //////////////////////////////////////////////////
 // 30. Javascript Releases: ES%, ES6+ and ESNext
 
-//test test
+
+
+
+
+
