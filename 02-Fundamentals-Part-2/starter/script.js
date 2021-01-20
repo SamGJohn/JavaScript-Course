@@ -156,5 +156,116 @@ function checkWinner(dolphinsAvg, koalasAvg){
 checkWinner(scoreDolphins, scoreKoalas);
 
 ///////////////////////////////////////////////////////
+
+// 39. Introduction to Arrays
+const friend1 = 'Mike';
+const friend2 = 'Steve';
+const friend3 = 'Eric'; 
+
+const friends = ['Mike', 'Steve', 'Eric'];
+console.log(friends)
+
+const yrs = new Array(1991, 1984, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+
+console.log(friends[friends.length-1]);
+
+friends[2] = 'Jay';
+console.log(friends);// All arays can be mutated even though declared with const
+
+// friendes = [bob, allen] Cannot replace entire aray
+
+const firstName = 'Sam'
+const sam = [firstName, 'Johnson', 2021 - 1989, 'PM', friends];
+console.log(sam);
+
+// Exercise
+
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+const years = [1990, 1967,2002,2012,2018];
+
+// console.log(clacAge(years)); // Get NaN. Cannot do opperations with an entire array
+
+const age1 = calcAge(years[0]);
+console.log(age1);
+
+const ages = [calcAge(years[0]),years[1], years[2]];
+console.log(ages)
+
+///////////////////////////////////////////////////////
 */
-// testing git
+// 40. Basic Array Operations (Methods)
+
+// Add element to end
+const friends = ['Mike', 'Steve', 'Eric'];
+friends.push('Jay');
+console.log(friends);
+
+const newLength = friends.push('Jay');
+console.log(newLength);
+
+// Add element to beginning
+friends.unshift('John')
+console.log(friends)
+
+//Remove last element
+friends.pop();
+console.log(friends);
+
+friends.pop();
+const popped = friends.pop();
+console.log(popped);
+console.log(friends)
+
+// Remove First element
+friends.shift();
+console.log(friends)
+
+console.log(friends.indexOf('Steve')) // index of returns the position of the element
+
+console.log(friends.includes('Steve')) // tells if the element is in the array. Does not do type coersion
+
+if (friends.includes('Steve')){
+    console.log(`Yep Steve is there`)
+}
+
+
+// TIP APP FOR FUN
+// const bill = prompt(`what is the bill?`)
+// const service = prompt('How was the service? (Yes or No)')
+
+// const calcTip = function(service, billValue){
+//     if(service === 'Yes'){
+//         return billValue * .20
+//     } else {
+//         return billValue *.15
+//     }
+// }
+
+// alert(`You should tip $${calcTip(service, bill)}`)
+// const tip = calcTip(service,bill);
+
+// // alert(`Your meal will cost $${tip + bill}`)
+
+const calcTip = function(billValue){
+        if(billValue >= 50 && billValue <= 300){
+            return billValue * .15
+        } else {
+            return billValue *.20
+        }
+    }
+
+    console.log(calcTip(100))
+
+    const bills = [125, 55, 44];
+    const tips = [calcTip(bills[0]),calcTip(bills[1]),calcTip(bills[2])]
+    console.log(tips);
+
+    const total = [bills[0]+tips[0],bills[1]+tips[1],bills[2]+tips[2]];
+    console.log(total);
