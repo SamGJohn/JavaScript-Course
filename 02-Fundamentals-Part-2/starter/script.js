@@ -199,7 +199,7 @@ const ages = [calcAge(years[0]),years[1], years[2]];
 console.log(ages)
 
 ///////////////////////////////////////////////////////
-*/
+
 // 40. Basic Array Operations (Methods)
 
 // Add element to end
@@ -269,3 +269,140 @@ const calcTip = function(billValue){
 
     const total = [bills[0]+tips[0],bills[1]+tips[1],bills[2]+tips[2]];
     console.log(total);
+
+///////////////////////////////////////////////////////
+
+// 42. Intro to Objects
+
+const sam = { // Object Literal
+    firstName: 'Sam',
+    lastName: 'Johnson',
+    age: 2021 - 1989,
+    job: 'PM',
+    friends: ['Joh', 'Jay', 'Anna']
+}; 
+
+console.log(sam.firstName)
+
+///////////////////////////////////////////////////////
+
+// 4.3 Dot vs. Bracket Notation
+
+const sam = { // Object Literal
+    firstName: 'Sam',
+    lastName: 'Johnson',
+    age: 2021 - 1989,
+    job: 'PM',
+    friends: ['Joh', 'Jay', 'Anna']
+}; 
+
+console.log(sam.firstName);
+console.log(sam['lastName']); 
+
+const nameKey = 'Name';
+console.log(sam['first' + nameKey]);
+console.log(sam['last'+ nameKey]); //can compute the value of this object from an expression use when you need to calculate the value
+
+
+// const interestedIn = prompt(`What do you want to know about Sam? Choose between firstName, lastName, age, job, and friends`);
+// console.log(sam[interestedIn]);
+
+// if(sam[interestedIn]){
+//     console.log(sam[interestedIn])
+// } else {
+//     console.log('Wrong reqeust! What do you want to know about Sam? Choose between firstName, lastName, age, job, and friends')
+// }
+
+sam.location = 'New York';
+console.log(sam);
+
+//Challenge
+// Sam has 3 friends and his best friend is called Michael
+
+console.log(`${sam.firstName} has ${sam.friends.length} friends and his best friend is ${sam.friends[0]}`)
+
+///////////////////////////////////////////////////////
+
+// 44. Object Methods
+
+// const sam = { // Object Literal
+//     firstName: 'Sam',
+//     lastName: 'Johnson',
+//     birthYear: 1989,
+//     job: 'PM',
+//     friends: ['Joh', 'Jay', 'Anna'],
+//     hasDriversLicense: true,
+
+//     // calcAge: function(birthYear){ //functions attached to objects are called Methods
+//     //     return 2021 - birthYear
+//     // }
+
+//     // calcAge: function(){
+//     //     return 2021 - this.birthYear
+//     // }
+
+//     calcAge: function(){
+//         this.age = 2021 - this.birthYear;
+//         return this.age;
+//     }
+// }; 
+
+// // console.log(sam.calcAge(1989))
+// // console.log(sam['calcAge'](1989));
+
+// console.log(sam.calcAge()); //have to cal the function within the object once then can use the new property defined in the function
+// console.log(sam.age);
+
+//Challenge
+//"Sam is a 32-year old teacher, and he has a driver's license"
+
+const sam = { // Object Literal
+        firstName: 'Sam',
+        lastName: 'Johnson',
+        birthYear: 1989,
+        job: 'PM',
+        friends: ['Joh', 'Jay', 'Anna'],
+        hasDriversLicense: false,
+
+        calcAge: function(){
+            this.age = 2021 - this.birthYear
+            return this.age;
+        },
+
+        getSummary: function(){
+           return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? `a` : `no`} driver's license`
+        }
+};
+
+console.log(sam.getSummary());
+
+///////////////////////////////////////////////////////
+*/
+
+// Coding Challenge Part 2 Challenge 3
+
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function(){
+        this.bmi=this.mass/this.height**2
+        return this.bmi
+    }
+}
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function(){
+        this.bmi = this.mass/this.height**2
+        return this.bmi
+    }
+}
+
+if(mark.calcBMI()>john.calcBMI()){
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`)
+}else{
+    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`)
+}
