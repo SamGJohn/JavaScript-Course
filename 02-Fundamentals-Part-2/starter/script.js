@@ -377,7 +377,7 @@ const sam = { // Object Literal
 console.log(sam.getSummary());
 
 ///////////////////////////////////////////////////////
-*/
+
 
 // Coding Challenge Part 2 Challenge 3
 
@@ -406,3 +406,79 @@ if(mark.calcBMI()>john.calcBMI()){
 }else{
     console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`)
 }
+
+///////////////////////////////////////////////////////
+
+// 46. Iteration: The for Loop
+
+console.log('lifting wights repeition 1')
+console.log('lifting wights repeition 2')
+
+// ***for loop keeps running while condition is TRUE***
+for(let rep = 1; rep <= 10; rep ++){
+    console.log('lifting wights repeition 1');
+} 
+
+for(let rep = 1; rep <= 10; rep ++){
+    console.log(`lifting weights rep ${rep}`);
+} 
+
+///////////////////////////////////////////////////////
+
+
+const sam = [ // Object Literal
+    'Sam',
+    'Johnson',
+    2021 - 1989,
+    'PM',
+    ['Joh', 'Jay', 'Anna'],
+    true
+    
+]; 
+const types = [];
+
+// console.log(sam[0]);
+// console.log(sam[1]);
+// ...
+// console.log(sam[0]);
+// sam[5] does NOT exist
+
+for (let i = 0; i < sam.length; i++) {
+    //reading from sam array
+    console.log(sam[i], typeof sam[i]);
+
+    //filling types array
+    // types[i]=typeof sam[i]
+    types.push(typeof sam[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++){
+    ages.push(2021 - years[i]);
+}
+
+console.log(ages);
+
+// Continue Statement : exit current itteration of the loop then move on to the next one
+
+console.log(`ONlY STRINGS . FANS`);
+for (let i = 0; i < sam.length; i++) {
+    if(typeof sam[i] !== 'string') continue; // if typeof sam.i is not a string then continue 
+
+    console.log(sam[i], typeof sam[i]);
+}
+// Break Statement : Terminate the loop entirely
+
+console.log(`---Break with Number---`);
+for (let i = 0; i < sam.length; i++) {
+    if(typeof sam[i] === 'number') break; // if typeof sam.i is not a string then continue 
+
+    console.log(sam[i], typeof sam[i]);
+}
+
+///////////////////////////////////////////////////////
+*/
