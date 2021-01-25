@@ -286,7 +286,7 @@ console.log(sam.firstName)
 
 ///////////////////////////////////////////////////////
 
-// 4.3 Dot vs. Bracket Notation
+// 43. Dot vs. Bracket Notation
 
 const sam = { // Object Literal
     firstName: 'Sam',
@@ -424,7 +424,7 @@ for(let rep = 1; rep <= 10; rep ++){
 } 
 
 ///////////////////////////////////////////////////////
-
+// 47. Looping Arrays, Breaking Continuing
 
 const sam = [ // Object Literal
     'Sam',
@@ -481,4 +481,87 @@ for (let i = 0; i < sam.length; i++) {
 }
 
 ///////////////////////////////////////////////////////
+
+// 48. Looping Backwards and Loops in Loops
+
+const sam = [ // Object Literal
+    'Sam',
+    'Johnson',
+    2021 - 1989,
+    'PM',
+    ['Joh', 'Jay', 'Anna'],
+    true
+]; 
+
+//Looping Backwards
+for(let i = sam.length-1; i>=0; i--){
+    console.log(i, sam[i]);
+}
+
+console.log(sam.length)
+
+for (let workOut = 1; workOut <4; workOut++){
+    console.log(`----starting workout ${workOut}`);
+    for (let rep=1; rep < 6; rep++){
+        console.log(`Lifting weights repition ${rep}`);
+    }
+}
+
+///////////////////////////////////////////////////////
+
+// 49. While Loop
+
+// for(let rep = 1; rep <= 10; rep ++){
+//     console.log(`lifting wights repeition ${rep}`);
+// } 
+
+// let rep =1; //Use while loops when you don't need to depend on a counter; when you don't know how many times the loop will run
+
+// while(rep <= 10){
+//     console.log(`While: Lifting weights repitition ${rep}`);
+//     rep++;
+// }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log(`You fuckin win!`);
+}
+
+///////////////////////////////////////////////////////
 */
+// Part 2 Challenge #4
+
+const bills = [
+    22,
+    295,
+    176,
+    440,
+    37,
+    105,
+    10,
+    1100,
+    86,
+    52
+]
+
+const tips = []
+const totals = []
+
+// for (let i = 0; i < years.length; i++){
+//     ages.push(2021 - years[i]);
+// }
+
+for (let i=0; i < bills.length; i++){
+    const calcTip = function(billvalue){
+        if(bills[i] >= 50 && bills[i] <= 300){
+            return bills[i] * .15
+        } else {
+            return bills[i] *.20
+        }
+    }
+    tips.push(calcTip(bills[i]));
+}
