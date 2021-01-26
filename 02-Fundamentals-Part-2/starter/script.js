@@ -555,13 +555,28 @@ const totals = []
 //     ages.push(2021 - years[i]);
 // }
 
-for (let i=0; i < bills.length; i++){
-    const calcTip = function(billvalue){
-        if(bills[i] >= 50 && bills[i] <= 300){
-            return bills[i] * .15
-        } else {
-            return bills[i] *.20
-        }
-    }
-    tips.push(calcTip(bills[i]));
+const calcTip = function(bill){
+    if(bill >= 50 && bill <= 300){
+        return bill * .15
+    } else {
+        return bill *.20
+    };
 }
+
+for (let i=0; i < bills.length; i++){
+    tips.push(calcTip(bills[i]));
+    totals.push(calcTip(bills[i])+bills[i]);
+    }
+
+console.log(tips,totals);
+
+const calcAverage = function(arr) {
+    let sum=0;
+    for (let i = 0; i < arr.length; i++){
+        // sum = sum + arr[i];
+        sum += arr[i];
+    }
+    console.log(sum);
+}
+
+calcAverage([2, 3, 6]);
