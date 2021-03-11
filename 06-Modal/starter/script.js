@@ -8,7 +8,6 @@ const btnsOpenModal = document.querySelectorAll('.show-modal');
 console.log(btnsOpenModal);
 
 const openModal = function () {
-  console.log('Button Clicked');
   modal.classList.remove('hidden'); //Only use the "." when selecting a class (querySelector)
   overlay.classList.remove('hidden');
 };
@@ -25,3 +24,19 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 // When clicked, call above function ^
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//Need to look at event object. Give function a parameter. As event occers JS calls the function with the event object (event) as an argumen.
+document.addEventListener('keydown', function (event) {
+  console.log(event.key); //parameter.key to read key. Can read any property from object with this.
+
+  //   if (event.key === 'Escape') {
+  //     if (!modal.classList.contains('hidden')) {
+  //       closeModal();
+  //     }
+  //   }
+  // });
+  // Simplifying with &&
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
